@@ -80,7 +80,8 @@ public class HttpUtils {
      * @param ua UserAgent字符串
      */
     public void setUserAgent(String ua ) {
-    	this.userAgent = ua ;    	
+    	if( ua != null && ua.length() > 0 )
+    		this.userAgent = ua ;    	
     }
     /**
      * 取得UserAgent
@@ -89,7 +90,17 @@ public class HttpUtils {
     public String getUserAgent() {
     	return this.userAgent ;
     }
-    
+
+	/**
+	* 获取html内容
+    * @param httpUrl 网页URL
+    * @param encodeType 编码类型
+	* @return String HTML内容
+	*/
+    public byte[] getHttpCode(String httpUrl) {
+        return getHttpCode(httpUrl,"") ;
+    }
+
     /**
      * 从HTTP服务器获取数据，若页面压缩则解压缩
      * @param httpUrl 数据URL
@@ -182,16 +193,6 @@ public class HttpUtils {
     	}
 	}
 	    
-
-	/**
-	* 获取html内容
-    * @param httpUrl 网页URL
-    * @param encodeType 编码类型
-	* @return String HTML内容
-	*/
-    public byte[] getHttpCode(String httpUrl) {
-        return getHttpCode(httpUrl,"") ;
-    }
 
     /**
      * 获取登录cookie

@@ -11,8 +11,5 @@
 	<classpathentry kind="lib" path="D:/MyProgram/java/PaperPrepare/jar/lucene-analyzers-common-4.10.2.jar"/>
 	<classpathentry kind="lib" path="D:/MyProgram/java/PaperPrepare/jar/lucene-highlighter-4.10.2.jar"/>
 	<classpathentry kind="lib" path="D:/MyProgram/java/PaperPrepare/jar/lucene-queryparser-4.10.2.jar"/>
-	<classpathentry kind="lib" path="D:/MyProgram/java/PaperPrepare/jar/IndexOperate-1.0.jar"/>
-	<classpathentry kind="lib" path="D:/MyProgram/java/PaperPrepare/jar/Common-1.0.jar"/>
-	<classpathentry kind="lib" path="D:/MyProgram/java/PaperPrepare/jar/DBUtils-1.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

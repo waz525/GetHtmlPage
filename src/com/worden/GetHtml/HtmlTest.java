@@ -1,3 +1,4 @@
+package com.worden.GetHtml;
 
 import java.io.UnsupportedEncodingException;
 import org.apache.lucene.search.ScoreDoc;
@@ -17,12 +18,12 @@ public class HtmlTest {
 		ParseHtml parseHtml = new ParseHtml() ;	
 		
 		
-		/*
+		
 		httpU.getHttpCode("http://esf.nanjing.fang.com/chushou/3_154751008.htm");
 		System.out.println(httpU.getContentType() +" ==> "+httpU.getFileLength() + " ==> " +httpU.getFileContent().length );
 
 		FileUtils.WriteBytesToFile("D:\\WebSearch\\3_154751008.htm", httpU.getFileContent());
-		*/
+		
 		
 		
 		//parseHtml.createParserByResource("D:\\WebSearch\\3_154751008.htm" ,"gb2312");
@@ -67,7 +68,9 @@ public class HtmlTest {
 		indexProducer.AddDocument(doc.getDocument());
 		
 		indexProducer.CloseIndexWriter(); 
+		*/
 		
+		/*
 		Searcher searcher = new Searcher();
 				
 		searcher.InitSearcher("D:\\WebSearch\\index");
@@ -76,6 +79,8 @@ public class HtmlTest {
 		searcher.ShowScoreDocHighLight(sds,new String[]{"url","id","content","path"});
 		*/
 		
+		
+		/*
 		parseHtml.createParserByResource("D:\\WebSearch\\3_154751008.htm" ,"gb2312");
 		String[] text = parseHtml.getLink() ;
 		for( int i = 0 ; i<text.length ; i++ ) {
@@ -83,7 +88,7 @@ public class HtmlTest {
 			System.out.println("================================================================================== "+i) ;
 			System.out.println(text[i]);
 		}
-		
+		*/
 		System.out.println("Run Over !!!") ;
 		 
 		 

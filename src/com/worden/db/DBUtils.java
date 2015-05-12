@@ -179,24 +179,6 @@ public class DBUtils {
 		return rst ;
 	}
 
-	/**
-	* 查询意表记录数量
-	* @param table_name
-	* @return int
-	*/
-	public int QueryTableCount( String table_name ) {
-		String sql = "select count(*) from "+table_name ;
-		ResultSet rs;
-		int count = 0 ;
-		try {
-			rs = stmt.executeQuery(sql);
-			rs.next() ;
-			count = rs.getInt(1) ;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return count ;
-	}
 
 	/**
 	* 查询符合条件的记录数量
@@ -214,6 +196,15 @@ public class DBUtils {
 			e.printStackTrace();
 		}
 		return count ;
+	}
+
+	/**
+	* 查询意表记录数量
+	* @param table_name
+	* @return int
+	*/
+	public int QueryCount( String table_name ) {
+		return QueryCount(table_name,"1=1") ;
 	}
 	
 	/**
@@ -255,6 +246,11 @@ public class DBUtils {
 			e.printStackTrace();
 		}
 		return rst ;
+	}
+	
+
+	public int QueryOneValueInt(String table_name , String filedName , String qualification) {		
+		return Integer.parseInt(QueryOneValue(table_name,filedName,qualification));
 	}
 
 	/**

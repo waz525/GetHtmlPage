@@ -42,8 +42,7 @@ public class FileUtils {
 	 * @param filePath 文件全路径
 	 * @return boolean
 	 */
-	public static void RemoveFile( String filePath ) 
-	{
+	public static void RemoveFile( String filePath ) {
 		File file = new File(filePath);
 		
 		if( file.exists() ) {
@@ -58,6 +57,11 @@ public class FileUtils {
 			}
 		}
 		
+	}
+	
+	public static boolean Mkdirs(String filePath) {
+		File file = new File(filePath);
+		return file.mkdirs();
 	}
 	
 
