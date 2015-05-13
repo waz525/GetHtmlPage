@@ -1,0 +1,5 @@
+[DBCONFIG]
+DBHost=localhost
+DBUser=root
+DBPassword=123456
+DBName=websearch

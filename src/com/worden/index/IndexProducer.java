@@ -8,6 +8,7 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriterConfig;
+import org.apache.lucene.index.Term;
 import org.apache.lucene.index.IndexWriterConfig.OpenMode;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
@@ -84,6 +85,7 @@ public class IndexProducer {
 	public void AddDocument( Document doc) {
 		try {
 			indexWriter.addDocument(doc);
+			indexWriter.commit();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -98,6 +100,34 @@ public class IndexProducer {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
+	}
+	
+
+	/**
+	 * 删除一条记录的索引
+	 * @param fieldKey 目标记录的域名
+	 * @param fieldValue 目标记录的域值
+	 */
+	public void DeleteRecord( String fieldKey , String fieldValue ) {
+		try {
+			indexWriter.deleteDocuments(new Term(fieldKey, fieldValue));
+			indexWriter.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 添加子索引数据到本索引中
+	 * @param indexPath 子索引路径
+	 */
+	public void AddIndex(String indexPath) {
+		try {
+			indexWriter.addIndexes(FSDirectory.open(new File(indexPath)));
+			indexWriter.commit();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 }

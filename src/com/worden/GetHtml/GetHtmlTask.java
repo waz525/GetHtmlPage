@@ -160,7 +160,7 @@ public class GetHtmlTask {
 		
 		nIndexPath = ""+nMysqlUtils.QueryOneValue("ConfigTable", "CValue", "CKey = 'WorkDir'")+"/index/" 
 				+nMysqlUtils.QueryOneValue("TaskTable","WebSiteName","TaskId = "+nTaskID)+"/" ;
-		//FileUtils.Mkdirs(nIndexPath);
+		FileUtils.Mkdirs(nIndexPath);
 		
 		if( isSaveHtml ) {
 			nHtmlPath = ""+nMysqlUtils.QueryOneValue("ConfigTable", "CValue", "CKey = 'WorkDir'")+"/html/" 

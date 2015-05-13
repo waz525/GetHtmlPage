@@ -18,15 +18,20 @@ public class HtmlTest {
 		ParseHtml parseHtml = new ParseHtml() ;	
 		
 		
-		
+		/*
 		httpU.getHttpCode("http://esf.nanjing.fang.com/chushou/3_154751008.htm");
 		System.out.println(httpU.getContentType() +" ==> "+httpU.getFileLength() + " ==> " +httpU.getFileContent().length );
 
 		FileUtils.WriteBytesToFile("D:\\WebSearch\\3_154751008.htm", httpU.getFileContent());
+		*/
+		
+		
+		parseHtml.createParserByResource("D:\\WebSearch\\html\\58.com\\2_1431421858_155.html" ,"utf-8");
 		
 		
 		
-		//parseHtml.createParserByResource("D:\\WebSearch\\3_154751008.htm" ,"gb2312");
+		
+		
 		//parseHtml.createParserByContent(httpU.getContent(), httpU.getContentType());
 		/*
 		String text = parseHtml.extactText( 0 ) ;
@@ -37,18 +42,19 @@ public class HtmlTest {
 		//System.out.println("Text: "+ parseHtml.getExtractedText() );
 		//parseHtml.getSimpleTextAndLink() ;
 		
-		/*
-		String con = "";
+		
+
 		String[] text = parseHtml.getSimpleText() ;
 		for( int i = 0 ; i<text.length ; i++ ) {
 
 			System.out.println("================================================================================== "+i) ;
-			con+=text[i];
+			FileUtils.AddStringToFile("D:\\WebSearch\\3_154751008_58.txt", "================================================================================== "+i+"\n");
 			System.out.println(text[i]);
+			FileUtils.AddStringToFile("D:\\WebSearch\\3_154751008_58.txt", text[i]+"\n");
 		}
 		
-		FileUtils.WriteStringToFile("D:\\WebSearch\\3_154751008.txt", con);
-		*/
+		//FileUtils.WriteStringToFile("D:\\WebSearch\\3_154751008.txt", con);
+		
 		
 		/*
 		FileUtils.RemoveFile("D:\\WebSearch\\index");

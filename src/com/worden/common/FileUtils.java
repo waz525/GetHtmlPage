@@ -61,7 +61,10 @@ public class FileUtils {
 	
 	public static boolean Mkdirs(String filePath) {
 		File file = new File(filePath);
-		return file.mkdirs();
+		if( !file.exists()) {
+			return file.mkdirs();
+		}
+		return true ;
 	}
 	
 
@@ -156,6 +159,15 @@ public class FileUtils {
 			e.printStackTrace();
 			System.out.println(e);
 		}
+	}
+
+	/**
+	 * 将字符串追加写入文件
+	 * @param filePath 文件全路径
+	 * @param content 内容
+	 */
+	public static void AddStringToFile(String filePath , String content) {
+		WriteStringToFile(  filePath ,  content , 1) ;
 	}
 
 	/**

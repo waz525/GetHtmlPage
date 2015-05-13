@@ -123,8 +123,8 @@ public class Searcher {
 
 		try {
 			Directory directory = FSDirectory.open(new File(indexPath));
-			DirectoryReader reader = DirectoryReader.open(directory);
-			searcher = new IndexSearcher(reader);
+			DirectoryReader IndexReader = DirectoryReader.open(directory);
+			searcher = new IndexSearcher(IndexReader);
 		} catch (CorruptIndexException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -347,7 +347,9 @@ public class Searcher {
 			e.printStackTrace();
 		 }
 	}
-		
 	
+	public int GetNumOfIndexDoc() {
+		return searcher.getIndexReader().numDocs() ;
+	}
 	
 }
